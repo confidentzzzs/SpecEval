@@ -45,7 +45,7 @@ The full step is in the read.md in the Evaluation/Demo/read/md
 4. **Run the Script**: Execute the Python script to modify, compile (if Java), and run the files.
 
     ```bash
-    python3 eva_pipeline.py
+    python3 eva_pipeline_py.py
     ```
 
 5. **View Output**: The script prints the number of failed assertions and any other output.
