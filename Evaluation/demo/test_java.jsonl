@@ -1,0 +1,7 @@
+{"file_name": "AddDigits.java", "preconditions": ["assert Integer.class.isInstance(num);", "assert 0 <= num && num <= Integer.MAX_VALUE;"], "postconditions": ["assert 0 <= result && result <= 9;", "assert Integer.class.isInstance(result);"]}
+
+
+
+
+
+
