@@ -15,3 +15,36 @@ Recent research has shown that large language models (LLMs) are capable of gener
 
 ### Data
 The data for the real world project part is in following link https://drive.google.com/drive/folders/1X2kOhON066jRfslnpGNUJt8Nz6vj0YPA
+### JSONL-Based Python/Java File Assertion Inserter
+
+This script processes JSONL files to insert preconditions and postconditions into specified Python or Java files. It then executes the modified files and prints the output.
+
+#### Quick Steps
+The full step is in the read.md in the Evaluation/Demo/read/md
+1. **Prepare JSONL File**: Each line should include a JSON object with `"file_name"`, `"preconditions"`, and `"postconditions"`.
+
+    **Example:**
+
+    ```json
+    {
+        "file_name": "AddDigits.py",
+        "preconditions": [
+            "assert isinstance(n, int) and n >= 1"
+        ],
+        "postconditions": [
+            "assert ans > 0"
+        ]
+    }
+    ```
+
+2. **Update Script**: Set the `jsonl_file_path` variable in the Python script to your JSONL file's path.
+
+3. **Prepare Target Files**: Ensure the Python or Java files specified in the JSONL are accessible by the script.
+
+4. **Run the Script**: Execute the Python script to modify, compile (if Java), and run the files.
+
+    ```bash
+    python3 eva_pipeline.py
+    ```
+
+5. **View Output**: The script prints the number of failed assertions and any other output.
