@@ -10,7 +10,7 @@ Each line in the JSONL file should contain a separate JSON object with the follo
 
 \`\`\`json
 {
-    "file_name": "example_file.py",
+    "file_name": "AddDigits.py",
     "preconditions": [
         "assert isinstance(n, int) and n >= 1, \\"n must be a positive integer.\\""
     ],
