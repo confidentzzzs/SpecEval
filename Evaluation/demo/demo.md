@@ -1,6 +1,6 @@
-# JSONL-Based Python File Assertion Inserter
+# JSONL-Based Python/Java File Assertion Inserter
 
-This script processes JSONL files to insert preconditions and postconditions into specified Python files. It then executes the modified files and prints the output.
+This script processes JSONL files to insert preconditions and postconditions into specified Python or Java files. It then executes the modified files and prints the output.
 
 ## Steps to Use
 
@@ -12,10 +12,10 @@ Each line in the JSONL file should contain a separate JSON object with the follo
 {
     "file_name": "AddDigits.py",
     "preconditions": [
-        "assert isinstance(n, int) and n >= 1, \\"n must be a positive integer.\\""
+        "assert isinstance(n, int) and n >= 1""
     ],
     "postconditions": [
-        "assert ans > 0, \\"The result must be a positive integer.\\""
+        "assert ans > 0""
     ]
 }
 \`\`\`
@@ -24,7 +24,7 @@ Each line in the JSONL file should contain a separate JSON object with the follo
 - **preconditions**: A list of assertions to be added immediately after the function signature.
 - **postconditions**: A list of assertions to be added just before the return statement in the function.
 
-### 2. Replace the JSONL Path in the Python Script
+### 2. Replace the JSONL Path in the Script
 
 Open the Python script and locate the following line:
 
@@ -49,7 +49,7 @@ After completing the steps above, run the Python script. The script will:
 ### Example Command
 
 \`\`\`bash
-python3 eva_pipeline.py
+python3 eva_pipeline_py.py
 \`\`\`
 
 ### Example Output
@@ -57,8 +57,8 @@ python3 eva_pipeline.py
 The script will print the number of failed assertions for each Python file. For example:
 
 \`\`\`text
-Output from the executed file 'example_file.py':
-1
+Output from the executed file 'AddDigits.py':
+0
 \`\`\`
 
-This output indicates that 1 unique assertion failed during the execution of `example_file.py`.
+This output indicates that 0 unique assertion failed during the execution of `example_file.py`.
